@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <title>Lotus</title>
+   <subtitle>Lotus framework blog</subtitle>
+   <link href="http://lotusrb.org/atom.xml" rel="self"/>
+   <link href="http://lotusrb.org/blog"/>
+   <updated>2015-04-13T16:04:00+10:00</updated>
+   <id>http://lotusrb.org/blog</id>
+   <author>
+     <name>Lotus</name>
+     <email>admin@lotusrb.org</email>
+   </author>
+
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/04/13/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/04/13/weekly-changelog.html"/>
+       <updated>2015-04-13T16:04:00+10:00</updated>
+       <author>
+         <name>Trung Lê</name>
+       </author>
+       <summary>
+         Changelog from Apr 6th to Apr 13rd 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<p>-</p>
+
+<h2>Completed</h2>
+
+<ul>
+<li>Touch created_at attribute upon entity persistence [<a href="https://github.com/lotus/model/pull/173">details</a>]</li>
+<li>Model CLI generator [<a href="https://github.com/lotus/lotus/pull/199">details</a>]</li>
+<li>Ensure to load routes when testing in isolation [<a href="https://github.com/lotus/lotus/pull/188">details</a>]</li>
+<li>Lotus::Interactor#error to return falsey value [<a href="https://github.com/lotus/utils/pull/70">details</a>]</li>
+<li>Ensure to use ::String when invoke redirect_to [<a href="https://github.com/lotus/controller/pull/100">details</a>]</li>
+<li>Add &ndash;skip-view flag to lotus generate action [<a href="https://github.com/lotus/lotus/pull/203">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Add Destroy CLI [<a href="https://github.com/lotus/lotus/pull/194">details</a>]</li>
+<li>Add repository timestamps [<a href="https://github.com/lotus/model/pull/169">details</a>]</li>
+<li>Implementation of dirty check for entity [<a href="https://github.com/lotus/model/pull/172">details</a>]</li>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Application generator [<a href="https://github.com/lotus/lotus/pull/181">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/11">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/03/29/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/03/29/weekly-changelog.html"/>
+       <updated>2015-03-29T20:40:00+11:00</updated>
+       <author>
+         <name>Trung Lê</name>
+       </author>
+       <summary>
+         Changelog from Mar 24th to Mar 29nd 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<ul>
+<li>Released lotusrb 0.3.0</li>
+<li>Released lotus-validations 0.3.0</li>
+<li>Released lotus-view 0.3.0</li>
+<li>Released lotus-controller 0.3.0</li>
+<li>Released lotus-model 0.3.0</li>
+<li>Released lotus-router 0.3.0</li>
+<li>Released lotus-utils 0.4.0</li>
+<li>Released lotus-helpers 0.1.0</li>
+</ul>
+
+<h2>Completed</h2>
+
+<ul>
+<li>Introduce link_to helper [<a href="https://github.com/lotus/helpers/pull/18">details</a>]</li>
+<li>Rename Query#desc to Query#reverse_order [<a href="https://github.com/lotus/model/pull/166">details</a>]</li>
+<li>Ensure to load routes when testing in isolation [<a href="https://github.com/lotus/lotus/pull/188">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Application generator [<a href="https://github.com/lotus/lotus/pull/181">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/11">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>Announcing Lotus v0.3.0</title>
+       <id>http://lotusrb.org/blog/2015/03/23/announcing-lotus-030.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/03/23/announcing-lotus-030.html"/>
+       <updated>2015-03-24T04:14:00+11:00</updated>
+       <author>
+         <name>Luca Guidi</name>
+       </author>
+       <summary>
+         This is the most exciting Lotus release ever. We have new features, improved security, and more real world use cases.
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Stability and adoption</h2>
+
+<p>Lotus is getting more and more stable. This is the result of real world feedback of products that we are following closely during their development with Lotus.</p>
+
+<p>The first company that we are happy to give a warm welcome in our family is <strong><a href="https://dnsimple.com">DNSimple</a></strong>.
+They are <a href="https://speakerdeck.com/weppos/maintaining-a-5yo-ruby-project-shark-edition">maintaining</a> a rock solid Ruby code base that uses Rails for their flagship product and Lotus for their next HTTP API.</p>
+
+<h2>Security</h2>
+
+<p>Security is a vital factor for companies and a sensitive subject for users. A product won&rsquo;t survive if not proven secure.</p>
+
+<p>The Web is an insecure place. As a Community, we need to build a Security culture.
+Lotus wants to increase the level of awareness around this topic and provide defense mechanisms to common attacks.</p>
+
+<p>Please remember that <strong>there isn&rsquo;t a silver bullet</strong> when we talk about security. Nearly all protections can be debunked by experienced attackers. Developers should use all the available tools to make hackers&rsquo; life harder.</p>
+
+<h3>XSS</h3>
+
+<p><a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">XSS</a> (Cross Site Scripting) is one of the most <a href="https://www.owasp.org/index.php/Top10#OWASP_Top_10_for_2013">popular</a> threat for web applications. It&rsquo;s caused by unescaped malicious input, often sent with forms. Once the payload is on a web page, it can activate evil scripts to take over the control and eventually steal data (cookies).</p>
+
+<p>As first countermeasure, since now on, the output of views, helpers and presenters is <strong>escaped by default</strong>.</p>
+
+<p>Secondly, cookies will be sent with the <code>HttpOnly</code> option turned on. That means JavaScript won&rsquo;t be able to access them via <code>document.cookie</code>. If a malign script wants to steal data, it can&rsquo;t because the browser will stop it.</p>
+
+<p>We&rsquo;re not done yet, until we have talked about <a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">Content Security Policy</a> (CSP). It&rsquo;s feature supported by modern browsers to regulate trusted sources of scripts, stylesheets, fonts. It&rsquo;s the ultimate defense against XSS and insecure script execution on the pages. Big products like GitHub, Twitter and GMail are using it. <strong>Lotus is the first Ruby web framework that makes CSP a default</strong>.</p>
+
+<h3>Clickhijacking</h3>
+
+<p>It&rsquo;s an <a href="http://en.wikipedia.org/wiki/Clickjacking">attack</a> that leads users to click on an invisible evil item. The trick is to embed a trusted web page via an iframe, so the user believes to interact with it, but instead their actions are hijacked by a harmful context.</p>
+
+<p>The solution is to send a <a href="https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet#X-Frame-Options_Header_Types">HTTP header</a> (<code>X-Frame-Options</code>) that regulates which source can embed your web application resources. <del><strong>Again, Lotus is the first Ruby web framework that enables this defense by default</strong>.</del></p>
+
+<h2>Features</h2>
+
+<p>With this release we have shipped powerful features to make the experience with Lotus more and more frictionless.</p>
+
+<h3>Action generators</h3>
+
+<p>While developing a feature that requires an new endpoint, it can be inconvenient to write all the required code by hand. It just breaks the flow.</p>
+
+<p>To solve this problem, we have introduced <strong>a new command line utility</strong>: <code>lotus generate action</code>. It produces an action, a view, a template, a route and their related testing code.</p>
+
+<h3>Improved application generator</h3>
+
+<p>We have improved the application generator to allow Lotus applications to meet developers&rsquo; needs.</p>
+
+<p>The command now accepts <code>--database</code> command line argument to setup the database of choice. Example <code>lotus new bookshelf --database=postgresql</code>.</p>
+
+<p>Another point of extension is the <code>--test</code> argument. It generates setup code for Minitest (default) or RSpec. Example <code>lotus new bookshelf --test=rspec</code>.</p>
+
+<p>We added the chance to generate an application for existing code base. Think of <strong>a Ruby gem that needs a web UI</strong>, with <code>lotus new .</code> it&rsquo;s now possible.</p>
+
+<h3>Database console</h3>
+
+<p>As last command line facility, we want to introduce <code>lotus db console</code>, a database REPL.</p>
+
+<h3>Helpers</h3>
+
+<p>Today we have released a new framework in the Lotus family: <code>lotus-helpers</code>. By following our tradition, it&rsquo;s <strong>shipped as a standalone gem</strong> that can be used to enhance views, templates and helpers in Ruby applications, even outside of Lotus.</p>
+
+<p>It delivers a <strong>HTML5 markup generator</strong> and <strong>routing helpers</strong>. On the security front, it brings HTML, HTML attribute and URL <strong>escape functions</strong> that follow OWASP/ESAPI suggestions.</p>
+
+<h3>Additional features</h3>
+
+<p>Database transactions, <strong>Interactors</strong>, logger and safe nested param access are only a few of the <a href="https://github.com/lotus/lotus/blob/master/FEATURES.md">features</a> that are available as of today with 0.3.0.</p>
+
+<h3>Acknowledgments</h3>
+
+<p>We want to say thank you to Alfonso Uceda Pompa, Linus Pettersson, Huy Đỗ, Hiếu Nguyễn, Tom Kadwill, Jimmy Zhang, and all the <a href="/community">wonderful people</a> that are making Lotus a better place every day.</p>
+
+<h2>What&rsquo;s next</h2>
+
+<p>We are already developing new functionalities for the next release: database migrations, form helpers, number formatters, CSRF protection and <a href="http://bit.ly/lotusrb-roadmap">more</a>.</p>
+
+<div style="display: inline">
+  <iframe src="https://ghbtns.com/github-btn.html?user=lotus&repo=lotus&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+
+  <a href="https://news.ycombinator.com/submit" class="hn-button" data-title="Announcing Lotus v0.3.0" data-url="http://lotusrb.org/blog/2015/03/23/announcing-lotus-030.html" data-count="horizontal" data-style="facebook">Vote on Hacker News</a>
+  <script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
+  <script type="text/javascript">
+    reddit_url = "http://lotusrb.org/blog/2015/03/23/announcing-lotus-030.html";
+  </script>
+  <script type="text/javascript" src="//www.redditstatic.com/button/button1.js"></script>
+</div>
+]]></content>
+     </entry>
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/03/22/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/03/22/weekly-changelog.html"/>
+       <updated>2015-03-22T19:10:00+11:00</updated>
+       <author>
+         <name>Trung Lê</name>
+       </author>
+       <summary>
+         Changelog from Mar 16th to Mar 22nd 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<p>-</p>
+
+<h2>Completed</h2>
+
+<ul>
+<li>Introduced action generator [<a href="https://github.com/lotus/lotus/pull/166">details</a>]</li>
+<li>Bumped lotus-model dependency to 0.3 for new app  [<a href="https://github.com/lotus/lotus/commit/a1a5ee00eaf1189906c625c7f8f72e8e248be02e">details</a>]</li>
+<li>Renamed <code>default_cookie_options</code> to <code>cookies</code> [<a href="https://github.com/lotus/controller/commit/0f851685e3f3dfe3c14c2f8a2bbbc414b7faa3d3">details</a>]</li>
+<li>Improved error messages for undefined method in view [<a href="https://github.com/lotus/view/pull/63">details</a>]</li>
+<li>Allow Action to disable layout [<a href="https://github.com/lotus/view/pull/65">details</a>]</li>
+<li>Make flash session to persist between requests [<a href="https://github.com/lotus/controller/pull/96">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Application generator [<a href="https://github.com/lotus/lotus/pull/181">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/11">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/03/15/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/03/15/weekly-changelog.html"/>
+       <updated>2015-03-15T20:29:00+11:00</updated>
+       <author>
+         <name>Trung Lê</name>
+       </author>
+       <summary>
+         Changelog from Mar 8th to Mar 15th 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<ul>
+<li>lotus-utils to v0.3.5</li>
+</ul>
+
+<h2>Completed</h2>
+
+<ul>
+<li>Allow specifying controller for resources routing [<a href="https://github.com/lotus/router/pull/45">details</a>]</li>
+<li>Stop sending nil value to DB when creating new record [<a href="https://github.com/lotus/model/pull/81">details</a>]</li>
+<li>Use Lotus::Utils Boolean class within model [<a href="https://github.com/lotus/model/pull/160">details</a>]</li>
+<li>redirect_to now halt the request [<a href="https://github.com/lotus/controller/pull/94">details</a>]</li>
+<li>Introduced <code>Lotus::Interactor</code> and <code>Lotus::Utils::BasicObject</code> [<a href="https://github.com/lotus/utils/commit/0b83e837174eaa3684b7923f60ce609c65555c99">details</a>]</li>
+<li>Lotus::Helpers integration in Lotus [<a href="https://github.com/lotus/lotus/pull/175">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Action generator [<a href="https://github.com/lotus/lotus/pull/166">details</a>]</li>
+<li>Application generator [<a href="https://github.com/lotus/lotus/pull/181">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/11">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+<li>Make flash session to persist between requests [<a href="https://github.com/lotus/controller/pull/96">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/03/08/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/03/08/weekly-changelog.html"/>
+       <updated>2015-03-08T20:29:00+11:00</updated>
+       <author>
+         <name>Luca Guidi</name>
+       </author>
+       <summary>
+         Changelog from Mar 2nd to Mar 8th 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<p>-</p>
+
+<h2>Completed</h2>
+
+<ul>
+<li>HttpOnly cookies by default [<a href="https://github.com/lotus/lotus/pull/176">details</a>], [<a href="https://github.com/lotus/controller/pull/91">details</a>]</li>
+<li>Application generator: <code>--database</code> argument to setup database configuration [<a href="https://github.com/lotus/lotus/pull/169">details</a>]</li>
+<li>Changed SQLite3 extension from <code>.db</code> to <code>.sqlite3</code> [<a href="https://github.com/lotus/lotus/pull/158">details</a>]</li>
+<li>Renamed <code>lotus dbconsole</code> to <code>lotus db console</code> [<a href="https://github.com/lotus/lotus/pull/167">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Action generator [<a href="https://github.com/lotus/lotus/pull/166">details</a>]</li>
+<li>Lotus::Helpers integration in Lotus [<a href="https://github.com/lotus/lotus/pull/175">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/14">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/03/01/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/03/01/weekly-changelog.html"/>
+       <updated>2015-03-02T02:44:00+11:00</updated>
+       <author>
+         <name>Luca Guidi</name>
+       </author>
+       <summary>
+         Changelog from Feb 23rd to Mar 1st 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<p>-</p>
+
+<h2>Completed</h2>
+
+<ul>
+<li>Database console [<a href="https://github.com/lotus/lotus/pull/152">details</a>]</li>
+<li>Default security headers [<a href="https://github.com/lotus/lotus/pull/159">details</a>]</li>
+<li>Initialize a Git repository when generate new applications [<a href="https://github.com/lotus/lotus/pull/163">details</a>]</li>
+<li>Generate a <code>.lotusrc</code> when generate new applications [<a href="https://github.com/lotus/lotus/pull/162">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Action generator [<a href="https://github.com/lotus/lotus/pull/166">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/14">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/02/22/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/02/22/weekly-changelog.html"/>
+       <updated>2015-02-22T21:03:00+11:00</updated>
+       <author>
+         <name>Luca Guidi</name>
+       </author>
+       <summary>
+         Changelog from Feb 16th to Feb 22th 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<ul>
+<li><a href="http://lotusrb.org">New website</a></li>
+<li><strong>Lotus::Model</strong> <code>v0.2.4</code> <a href="https://github.com/lotus/model/blob/master/CHANGELOG.md#v024---2015-02-20">details</a></li>
+</ul>
+
+<h2>Completed</h2>
+
+<ul>
+<li>Default response headers for <code>Lotus::Controller</code> [<a href="https://github.com/lotus/controller/pull/88">details</a>]</li>
+<li>View and Presenter autoescape [<a href="https://github.com/lotus/view/pull/60">details</a>]</li>
+<li><code>Lotus::Action::Params#get</code>: a safe API to access nested params (Example: <code>params.get(&#39;address.street&#39;)</code>) [<a href="https://github.com/lotus/controller/pull/89">details</a>]</li>
+<li><code>Lotus::Utils::String#titleize</code> [<a href="https://github.com/lotus/utils/pull/63">details</a>]</li>
+<li><code>Lotus::Utils::String#dasherize</code> [<a href="https://github.com/lotus/utils/pull/62">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li>Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li>Database console [<a href="https://github.com/lotus/lotus/pull/152">details</a>]</li>
+<li>Default security headers [<a href="https://github.com/lotus/lotus/pull/159">details</a>]</li>
+<li>Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li>Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/14">details</a>]</li>
+<li>Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
+     <entry>
+       <title>A New Roadmap For Lotus</title>
+       <id>http://lotusrb.org/blog/2015/01/01/a-new-roadmap-for-lotus.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/01/01/a-new-roadmap-for-lotus.html"/>
+       <updated>2015-01-02T00:26:00+11:00</updated>
+       <author>
+         <name>Luca Guidi</name>
+       </author>
+       <summary>
+         Learn from past mistakes, clarify goals, communicate intent, Core Team and priorities such as stability and security. This is the new Lotus roadmap.
+
+       </summary>
+       <content type="html"><![CDATA[<p>Last year <a href="http://lucaguidi.com/2014/12/23/2014-retrospective-a-year-of-lotus.html">was great</a>, and 2015 brings new challenges to Lotus.</p>
+
+<h2>Learn from mistakes</h2>
+
+<p>When I released the first version back in June it was a wild, unexpected success.
+There was an uncommon hype for the initial version of a <em>&ldquo;yet another web framework for Ruby&rdquo;</em>.</p>
+
+<p>Probably, Lotus&rsquo; vision met the needs of a lot of developers in our Community.
+The demand of a rich, stable ecosystem of libraries and patterns to build applications that are dead simple to build and maintain.</p>
+
+<p>But then there was six months of <em>&ldquo;communication black-out&rdquo;</em>.
+All the people whom actively followed the project, were aware that we were making some progress.
+This wasn&rsquo;t true for the <em>&ldquo;outside world&rdquo;</em>, which is made of the rest of the Ruby and tech Community.
+For those people, Lotus went out of the radar.</p>
+
+<p><strong>This was clearly my mistake.</strong></p>
+
+<p>The result was an unenthusiastic reaction for the last release of December, even if it shipped <strong>long time requested features</strong> like application generator or code reloading.</p>
+
+<p>I&rsquo;ve learned that Open Source isn&rsquo;t only about making the code accessible, but it&rsquo;s about <strong>openness</strong>: take collaborative decisions and be transparent.
+I have a clear vision for Lotus, but I poorly communicated the idea in the last months.</p>
+
+<p><strong>Lotus aims to be a complete, lightweight and stable alternative to build web applications with Ruby.</strong></p>
+
+<h2>Fixing those mistakes</h2>
+
+<p>Now that I have clarified the ultimate purpose of the project, how to get there?</p>
+
+<p>We&rsquo;re activating new collaboration channels to serve our goal.
+In the making there is <strong>a new website</strong>, where to find <strong>guides</strong> and a <strong>blog</strong> to keep people updated on what&rsquo;s going on.
+We&rsquo;re also activating a forum where to <strong>discuss features</strong> and <strong>disclose security alerts</strong>.</p>
+
+<p>Once features are be defined and prioritized for a milestone, you can track the planned, the current and the released functionalities so far.
+You can use this <a href="http://bit.ly/lotusrb-roadmap">board</a> to visualize the progress.</p>
+
+<h2>Core Team</h2>
+
+<p>Until now, Lotus was a project which taken the direction that I decided only by myself.
+This was useful to move fast at the beginning, to express with code my initial imprint and to lay solid foundations for that idea.</p>
+
+<p>But Lotus is an ambitious project who can&rsquo;t survive with only one individual.
+I understood the need of <a href="https://www.youtube.com/watch?v=YqXU4o24Hkg">diversity</a>, and bring real world experiences in the creation process.</p>
+
+<p>Starting from today, <a href="http://ruby-journal.com">Trung Lê</a> (<a href="https://github.com/joneslee85">@joneslee85</a>) will be part of the <strong>Lotus Core Team</strong>.
+Trung works at <a href="http://www.envato.com/">Envato</a> and on <a href="https://spreecommerce.com/">Spree Commerce</a>.
+In the last months, we have been discussing every day about the direction of Lotus and his tireless dedication made <a href="https://github.com/lotus/model">Lotus::Model</a> easier to use.
+Thank you Trung, welcome aboard.</p>
+
+<h2>Priorities</h2>
+
+<p>So far I have talked about communication, open decisions, core team.
+Those things are means to a few important values.</p>
+
+<h3>Stability</h3>
+
+<p>Lotus relies on <em>&ldquo;battle tested&rdquo;</em> libraries like <a href="https://github.com/rtomayko/tilt">Tilt</a>, <a href="http://sequel.jeremyevans.net/">Sequel</a>, <a href="http://rack.github.io">Rack</a>, but it still needs to reach its stability as a software.
+To fix blocking issues like bugs or improvements and release patch versions for them, will be our first priority.</p>
+
+<p>During the last year, there was too many people depending on the repository <code>HEAD</code>.
+This is bad because an application can suddenly break by updating gem dependencies.
+We highly recommend to use released versions from <a href="http://rubygems.org/gems/lotusrb">Rubygems</a>.</p>
+
+<p>We&rsquo;re also trying to <strong>avoid</strong> as much as possible <strong>breaking changes</strong> in the public API, even if we&rsquo;re under 1.0.
+Continuous, non-backward compatible reorganizations of code, destroy any chance that developers start an ecosystem around a technology.</p>
+
+<p>Think of <a href="http://www.rust-lang.org/">Rust</a>: it&rsquo;s a terrific and innovative language, but nearly nobody uses it.
+They kept changing too much, so companies were afraid of invest on it until now.</p>
+
+<h3>Features</h3>
+
+<p>The second priority is about features.
+We want to ship important functionalities to <strong>improve productivity</strong> and the overall <strong>experience with Lotus</strong>.
+Things like migrations, associations, assets management, HTML helpers, HTTP API architecture, will be released in the next months.</p>
+
+<h3>Security</h3>
+
+<p>We care about security.
+No vital application should be deployed in the wild without a serious assessment about data safety.
+Lotus will ship and <strong>activate by default</strong> mechanisms to protect applications and users from the most common attacks like <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">CSRF</a> or <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>.</p>
+
+<p>But there is more: we want to write short guides to <strong>make developers aware of the security measures</strong> that they can use while building applications.</p>
+
+<h2>Conclusion</h2>
+
+<p>I hope this will be another outstanding year for Lotus.
+Please join us in this journey.</p>
+]]></content>
+     </entry>
+</feed>
