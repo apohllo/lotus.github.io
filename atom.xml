@@ -4,13 +4,55 @@
    <subtitle>Lotus framework blog</subtitle>
    <link href="http://lotusrb.org/atom.xml" rel="self"/>
    <link href="http://lotusrb.org/blog"/>
-   <updated>2015-04-13T16:04:00+10:00</updated>
+   <updated>2015-04-19T15:14:00+10:00</updated>
    <id>http://lotusrb.org/blog</id>
    <author>
      <name>Lotus</name>
      <email>admin@lotusrb.org</email>
    </author>
 
+     <entry>
+       <title>Weekly Changelog</title>
+       <id>http://lotusrb.org/blog/2015/04/19/weekly-changelog.html</id>
+       <link rel="alternate" href="http://lotusrb.org/blog/2015/04/19/weekly-changelog.html"/>
+       <updated>2015-04-19T15:14:00+10:00</updated>
+       <author>
+         <name>Trung Lê</name>
+       </author>
+       <summary>
+         Changelog from Apr 14th to Apr 19th 2015
+
+       </summary>
+       <content type="html"><![CDATA[<h2>Releases</h2>
+
+<p>-</p>
+
+<h2>Completed</h2>
+
+<ul>
+<li><a href="https://github.com/dsnipe">Dmitry Tymchuk</a> Implementation of dirty check for entity [<a href="https://github.com/lotus/model/pull/172">details</a>]</li>
+<li><a href="https://github.com/mvader">Miguel Molina</a> Add self.body to actions generated with &ndash;skip-view flag[<a href="https://github.com/lotus/lotus/pull/206">details</a>]</li>
+<li><a href="https://github.com/AlfonsoUceda">Alfonso Uceda</a> Add self.body to actions generated with &ndash;skip-view flag[<a href="https://github.com/lotus/validations/pull/55">details</a>]</li>
+</ul>
+
+<h2>Development</h2>
+
+<ul>
+<li><a href="https://github.com/AlfonsoUceda">Alfonso Uceda</a> Added nested routes [<a href="https://github.com/lotus/router/pull/51">details</a>]</li>
+<li><a href="https://github.com/sungwoncho">Sung Won Cho</a> Add Destroy CLI [<a href="https://github.com/lotus/lotus/pull/194">details</a>]</li>
+<li><a href="https://github.com/dsnipe">Dmitry Tymchuk</a> Add repository timestamps [<a href="https://github.com/lotus/model/pull/169">details</a>]</li>
+<li><a href="https://github.com/joneslee85">Trung Lê</a> Database migrations [<a href="https://github.com/lotus/model/pull/144">details</a>]</li>
+<li><a href="https://github.com/hieuk09">Hiếu Nguyễn</a> Application generator [<a href="https://github.com/lotus/lotus/pull/181">details</a>]</li>
+<li><a href="https://github.com/jodosha">Luca Guidi</a> Form helpers [<a href="https://github.com/lotus/helpers/pull/16">details</a>]</li>
+<li><a href="https://github.com/tomkadwill">Tom Kadwill</a> Number formatting helpers [<a href="https://github.com/lotus/helpers/pull/11">details</a>]</li>
+<li><a href="https://github.com/rodzyn">Marcin Olichwirowicz</a> Custom validations [<a href="https://github.com/lotus/validations/pull/49">details</a>]</li>
+</ul>
+
+<h2>Roadmap</h2>
+
+<p><a href="http://bit.ly/lotusrb-roadmap">Trello board</a></p>
+]]></content>
+     </entry>
      <entry>
        <title>Weekly Changelog</title>
        <id>http://lotusrb.org/blog/2015/04/13/weekly-changelog.html</id>
