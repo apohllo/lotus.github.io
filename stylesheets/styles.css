@@ -12307,3 +12307,43 @@ pre[class*="language-"] {
 #social ul li {
   display: inline;
 }
+
+#edit-guides-article {
+  float: right;
+  font-size: .8em;
+}
+
+.convention {
+  padding: 1em;
+  background-color: #ffeeaf;
+  border: 1px solid #ffaa6b;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.convention:before {
+  content: "Convention - "
+}
+
+.notice {
+  padding: 1em;
+  background-color: #afeeff;
+  border: 1px solid #6baaff;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.warning {
+  padding: 1em;
+  background-color: #f99caf;
+  border: 1px solid #f92c71;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.warning:before {
+  content: "ATTENTION - "
+}
+.getting-started {
+  background-color: #fff;
+  color: #d3397e;
+  border-color: #c62c71;
+}
