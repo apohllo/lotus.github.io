@@ -371,7 +371,7 @@ In our terminal, enter:</p>
 
 <p>This will generate a new action <em>index</em> in the <em>books</em> controller of the <em>web</em> application.
 It gives us an empty action, view and template; it also adds a default route to <code>apps/web/config/routes.rb</code>:</p>
-<pre class="language-ruby ruby"><code><span class="n">get</span> <span class="s1">'/books'</span><span class="p">,</span> <span class="ss">to: </span><span class="s1">'book#index'</span>
+<pre class="language-ruby ruby"><code><span class="n">get</span> <span class="s1">'/books'</span><span class="p">,</span> <span class="ss">to: </span><span class="s1">'books#index'</span>
 </code></pre>
 
 <p>To make our test pass, we need to edit our newly generated template file in <code>apps/web/templates/books/index.html.erb</code>:</p>
@@ -418,7 +418,7 @@ Open up the file <code>apps/web/templates/application.htm.erb</code> and edit it
 
 <p>Now you can remove the duplicate lines from the other templates.</p>
 
-<p>A <strong>layout</strong> is a template like any other view, but it is used to wrap your regular templates.
+<p>A <strong>layout</strong> is like any other template, but it is used to wrap your regular templates.
 The <code>yield</code> line is replaced with the contents of our regular template.
 It&rsquo;s the perfect place to put our repeating headers and footers.</p>
 
@@ -498,6 +498,12 @@ Our projects has three of them: <code>.env</code> is for general settings, whil
 BOOKSHELF_DATABASE_URL="postgres://localhost/bookshelf_development"
 WEB_SESSIONS_SECRET="21aec7f7371228dd0d4da6a620a1a6b22889edcf0d4fb1c11b8080cd87146eda"
 </code></pre>
+
+<p>We can edit the database URL and add the database user and password if needed:</p>
+<pre class="language-ruby plaintext"><code>BOOKSHELF_DATABASE_URL="user:password@postgres://localhost/bookshelf_development"
+</code></pre>
+
+<p>The placeholders <strong><em>user</em></strong> and <strong><em>password</em></strong> should be replaced with the correct credentials.</p>
 
 <p>The database configured by default, called <code>bookshelf_development</code> running on <code>localhost</code>, should work fine for now.
 Lotus can create the database for us:</p>
@@ -602,7 +608,8 @@ Its connection string is defined in <code>.env.test</code> and here&rsquo;s how 
 <p>Now we can go change our template and remove the static HTML.
 Our view needs to loop over all available records and render them.
 Let&rsquo;s write a test to force this change in our view:</p>
-<pre class="language-ruby ruby"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+<pre class="language-ruby ruby"><code><span class="c1"># spec/web/views/books/index_spec.rb</span>
+<span class="nb">require</span> <span class="s1">'spec_helper'</span>
 <span class="nb">require_relative</span> <span class="s1">'../../../../apps/web/views/books/index'</span>
 
 <span class="n">describe</span> <span class="no">Web</span><span class="o">::</span><span class="no">Views</span><span class="o">::</span><span class="no">Books</span><span class="o">::</span><span class="no">Index</span> <span class="k">do</span>
@@ -659,7 +666,8 @@ Lotus is designed around simple objects with minimal interfaces that are easy to
 <p>If we run our feature test now, we&rsquo;ll see it fails — because our controller
 action does not actually <a href="/guides/actions/exposures"><em>expose</em></a> the books to our view. We can write a test for
 that change:</p>
-<pre class="language-ruby ruby"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+<pre class="language-ruby ruby"><code><span class="c1"># spec/web/controllers/books/index_spec.rb</span>
+<span class="nb">require</span> <span class="s1">'spec_helper'</span>
 <span class="nb">require_relative</span> <span class="s1">'../../../../apps/web/controllers/books/index'</span>
 
 <span class="n">describe</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controllers</span><span class="o">::</span><span class="no">Books</span><span class="o">::</span><span class="no">Index</span> <span class="k">do</span>
@@ -686,7 +694,8 @@ that change:</p>
 
 <p>Writing tests for controller actions is basically two-fold: you either assert on the response object, which is a Rack-compatible array of status, headers and content; or on the action itself, which will contain exposures after we&rsquo;ve called it.
 Now we&rsquo;ve specified that the action exposes <code>:books</code>, we can implement our action:</p>
-<pre class="language-ruby ruby"><code><span class="k">module</span> <span class="nn">Web::Controllers::Books</span>
+<pre class="language-ruby ruby"><code><span class="c1"># apps/web/controllers/books/index.rb</span>
+<span class="k">module</span> <span class="nn">Web::Controllers::Books</span>
   <span class="k">class</span> <span class="nc">Index</span>
     <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
 
@@ -797,6 +806,7 @@ Let&rsquo;s express them as unit tests:</p>
 <span class="nb">require_relative</span> <span class="s1">'../../../../apps/web/controllers/books/create'</span>
 
 <span class="n">describe</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controllers</span><span class="o">::</span><span class="no">Books</span><span class="o">::</span><span class="no">Create</span> <span class="k">do</span>
+  <span class="n">let</span><span class="p">(</span><span class="ss">:action</span><span class="p">)</span> <span class="p">{</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controllers</span><span class="o">::</span><span class="no">Books</span><span class="o">::</span><span class="no">Create</span><span class="p">.</span><span class="nf">new</span> <span class="p">}</span>
   <span class="n">let</span><span class="p">(</span><span class="ss">:params</span><span class="p">)</span> <span class="p">{</span> <span class="no">Hash</span><span class="p">[</span><span class="ss">book: </span><span class="p">{</span> <span class="ss">title: </span><span class="s1">'Confident Ruby'</span><span class="p">,</span> <span class="ss">author: </span><span class="s1">'Avdi Grimm'</span> <span class="p">}]</span> <span class="p">}</span>
 
   <span class="n">after</span> <span class="k">do</span>
@@ -824,9 +834,10 @@ We&rsquo;ve already seen how we can write entities to our database, and we can u
   <span class="k">class</span> <span class="nc">Create</span>
     <span class="kp">include</span> <span class="no">Web</span><span class="o">::</span><span class="no">Action</span>
 
+    <span class="n">expose</span> <span class="ss">:book</span>
+
     <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-      <span class="n">book</span> <span class="o">=</span> <span class="no">Book</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:book</span><span class="p">])</span>
-      <span class="no">BookRepository</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+      <span class="vi">@book</span> <span class="o">=</span> <span class="no">BookRepository</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="no">Book</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:book</span><span class="p">]))</span>
 
       <span class="n">redirect_to</span> <span class="s1">'/books'</span>
     <span class="k">end</span>
@@ -848,7 +859,7 @@ We clearly need a way of keeping invalid data out of our system!</p>
 <p>To express our validations in a test, we need to wonder: what <em>would</em> happen if our validations failed?
 One option would be to re-render the <code>books#new</code> form, so we can give our users another shot at completing it correctly.
 Let&rsquo;s specify this behaviour as unit tests:</p>
-<pre class="language-ruby ruby"><code><span class="c1"># spec/web/apps/controllers/books/create_spec.rb</span>
+<pre class="language-ruby ruby"><code><span class="c1"># spec/web/controllers/books/create_spec.rb</span>
 <span class="nb">require</span> <span class="s1">'spec_helper'</span>
 <span class="nb">require_relative</span> <span class="s1">'../../../../apps/web/controllers/books/create'</span>
 
@@ -1025,7 +1036,7 @@ We can use the <code>routes</code> helper method that is available in our views 
 <span class="cp">%&gt;</span>
 </code></pre>
 
-<p>We can make a similar change in <code>apps/controllers/books/create.rb</code>:</p>
+<p>We can make a similar change in <code>apps/web/controllers/books/create.rb</code>:</p>
 <pre class="language-ruby ruby"><code><span class="n">redirect_to</span> <span class="n">routes</span><span class="p">.</span><span class="nf">books_url</span>
 </code></pre>
 
@@ -1063,18 +1074,18 @@ Explore the <a href="/guides">other guides</a>, the <a href="http://www.rubydoc.
     <div class="row">
       <a class="logo col-md-3" href="/">logo</a>
         <div class="col-md-4">
-          <span class="date">June 23, 2015</span>
-          <h4>Announcing Lotus v0.4.0</h4>
-          <p>Features: additional architecture, database migrations, HTML5 form helpers, CSRF Protection, Force SSL. New Core Team member, Rails Girls Summer of Code and Guides!
+          <span class="date">June 30, 2015</span>
+          <h4>Announcing Rails Girls Summer of Code x Lotus</h4>
+          <p>This year marks the first participitation of Lotus project with Rails Girls Summer of Code program to deliver the long awaited mailer feature that has been set to be released along the roadmap for version 0.5.0.
 </p>
-          <a href="/blog/2015/06/23/announcing-lotus-040.html">Read more...</a>
+          <a href="/blog/2015/06/30/announcing-lotus-rgsoc.html">Read more...</a>
         </div>
         <div class="col-md-4">
-          <span class="date">June 17, 2015</span>
-          <h4>Introducing Database Migrations</h4>
-          <p>New feature for the upcoming v0.4.0: database migrations. Fast operations for schema: create, drop, migrate and prepare database. Keep migrations healthy with experimental feature.
+          <span class="date">June 28, 2015</span>
+          <h4>Weekly Changelog</h4>
+          <p>Changelog from Jun 01 2015 to Jun 28 2015
 </p>
-          <a href="/blog/2015/06/17/introducing-database-migrations.html">Read more...</a>
+          <a href="/blog/2015/06/28/weekly-changelog.html">Read more...</a>
         </div>
     </div>
   </div>
